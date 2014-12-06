@@ -7,4 +7,7 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', 'homeport.views.home', name='home'),
+    url(r'^on', 'homeport.views.on', name='on'),
+    url(r'^off', 'homeport.views.off', name='off'),
 )
