@@ -4,7 +4,7 @@ import RPi.GPIO as GPIO
 import time
 
 
-html1 = "<html><body><H1><a href='on'>on</a></br><a href='off'>off</a></H1></br>"
+html1 = "<html><body><H1><a href='on'>on</a></br></br></br><a href='off'>off</a></H1></br>"
 html2 = ""
 html3 = "</body></html>"
 port3 = 0
