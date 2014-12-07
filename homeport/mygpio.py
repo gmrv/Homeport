@@ -12,7 +12,7 @@ def getTemp():
     return str1
 
 def getButton():
-    print("Отключено")
+    print("button not use")
     # GPIO.setmode(GPIO.BOARD)
     # GPIO.setup(3, GPIO.IN)
     # port3 = GPIO.input(3)
