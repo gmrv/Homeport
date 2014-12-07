@@ -4,18 +4,15 @@ import RPi.GPIO as GPIO
 import time
 
 
-html1 = "<html><body><H1><a href='on'>on</a></br></br></br><a href='off'>off</a></H1></br>"
+html1 = "<html><body><H1><a href='on'>on</a></br></br><a href='off'>off</a></H1></br>"
 html2 = ""
 html3 = "</body></html>"
 port3 = 0
 
 
 def home(request):
-    GPIO.setmode(GPIO.BOARD)
-    GPIO.cleanup()
-
     f = open("/sys/bus/w1/devices/28-000005ffad2a/w1_slave", 'r')
-    str1 = f.readline()
+    f.readline()
     str1 = f.readline()
     html2 = "<b>" + str1 + "</b>"
 
