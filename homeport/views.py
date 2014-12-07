@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-import mygpio
+import mygpio1
 import os
 import time
 
@@ -11,18 +11,18 @@ port3 = 0
 
 
 def home(request):
-    html2 = "<b>" + mygpio.getTemp() + "</b>"
+    html2 = "<b>" + mygpio1.getTemp() + "</b>"
 
 
     return HttpResponse(html1+html2+html3)
 
 def on(request):
-    mygpio.setLedOn(1)
-    html2 = "<b>" + mygpio.getTemp() + "</b>"
+    mygpio1.setLed(1)
+    html2 = "<b>" + mygpio1.getTemp() + "</b>"
     return HttpResponse(html1+html2+html3)
 
 def off(request):
-    mygpio.setLedOn(0)
-    html2 = "<b>" + mygpio.getTemp() + "</b>"
+    mygpio1.setLed(0)
+    html2 = "<b>" + mygpio1.getTemp() + "</b>"
     return HttpResponse(html1+html2+html3)
 

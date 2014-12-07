@@ -1,9 +1,10 @@
 import RPi.GPIO as GPIO
 
-def setLedOn(state):
+def setLed(state):
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(3, GPIO.OUT)
     GPIO.output(3, state)
+    print("button not use")
 
 def getTemp():
     f = open("/sys/bus/w1/devices/28-000005ffad2a/w1_slave", 'r')
