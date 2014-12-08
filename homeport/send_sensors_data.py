@@ -12,7 +12,7 @@ try:
     data = sock.recv(1024)
     sock.close()
     f = open("sensor_data_send.log", 'a')
-    f.write(str(datetime.now()) + " " + data + " " + sensor_value_1 + "\r\n")
+    f.write(str(datetime.now()) + " " + data + " " + str(sensor_value_1) + "\r\n")
     f.close()
 except socket.error, e:
     f = open("sensor_data_send.log", 'a')
