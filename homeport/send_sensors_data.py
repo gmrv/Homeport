@@ -7,7 +7,7 @@ SENSOR_ID_1 = '28-000005ffad2a'
 sock = socket.socket()
 try:
     sensor_value_1 = mygpio.getTemp()
-    sock.connect(('narodmon1.ru', 8283))
+    sock.connect(('narodmon.ru', 8283))
     sock.send("#{}\n#{}#{}\n##".format(DEVICE_MAC, SENSOR_ID_1, sensor_value_1))
     data = sock.recv(1024)
     sock.close()
