@@ -2,7 +2,7 @@ import socket
 import mygpio
 from datetime import datetime
 
-DEVICE_MAC = 'e8:4e:06:1c:37:e8'
+DEVICE_MAC = ''
 SENSOR_ID_1 = '28-000005ffad2a'
 sock = socket.socket()
 try:
