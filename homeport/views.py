@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-import mygpio
+import mygpio1
 import os
 from datetime import datetime
 
@@ -11,7 +11,7 @@ port3 = 0
 
 
 def home(request):
-    html2 = "<b>" + str(mygpio.getTemp()) + "</b>"
+    html2 = "<b>" + str(mygpio1.getTemp()) + "</b>"
 
     f = open("/home/pi/homeport/ip.log", 'a')
     f.write(str(datetime.now()) + " " + str(request.META['REMOTE_ADDR']) + "\\" + "\r\n")
@@ -20,8 +20,8 @@ def home(request):
     return HttpResponse(html1+html2+html3)
 
 def on(request):
-    mygpio.setLed(1)
-    html2 = "<b>" + str(mygpio.getTemp()) + "</b>"
+    mygpio1.setLed(1)
+    html2 = "<b>" + str(mygpio1.getTemp()) + "</b>"
 
     f = open("/home/pi/homeport/ip.log", 'a')
     f.write(str(datetime.now()) + " " + str(request.META['REMOTE_ADDR']) + "\\on" + "\r\n")
@@ -30,8 +30,8 @@ def on(request):
     return HttpResponse(html1+html2+html3)
 
 def off(request):
-    mygpio.setLed(0)
-    html2 = "<b>" + str(mygpio.getTemp()) + "</b>"
+    mygpio1.setLed(0)
+    html2 = "<b>" + str(mygpio1.getTemp()) + "</b>"
 
     f = open("/home/pi/homeport/ip.log", 'a')
     f.write(str(datetime.now()) + " " + str(request.META['REMOTE_ADDR']) + "\\off" + "\r\n")
@@ -39,3 +39,14 @@ def off(request):
 
     return HttpResponse(html1+html2+html3)
 
+def log(request):
+    html2 = ""
+    line = ""
+    f = open("/home/pi/homeport/ip.log", 'r')
+
+    for line in f:
+        html2 += line + "</br>"
+
+    f.close()
+
+    return HttpResponse(html1+html2+html3)
