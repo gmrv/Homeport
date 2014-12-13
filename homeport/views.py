@@ -15,7 +15,7 @@ def home(request):
     html2 = "<b>" + str(mygpio.getTemp()) + "</b>"
 
     f = open(iplog_fpath + "ip.log", 'a')
-    f.write(str(datetime.now()) + " " + request.META['REMOTE_ADDR'] + "; " + request.META['COMPUTERNAME']  + "; " + request.META['USERNAME']   + "; " + request.META['TMP'] + "; " + "\\off" + "\r\n")
+    f.write(str(datetime.now()) + " " + request.META['REMOTE_ADDR'] + "; " + request.META['USERNAME'] + "; " + "\\" + "\r\n")
     f.close()
 
     return HttpResponse(html1+html2+html3)
@@ -25,7 +25,7 @@ def on(request):
     html2 = "<b>" + str(mygpio.getTemp()) + "</b>"
 
     f = open(iplog_fpath + "ip.log", 'a')
-    f.write(str(datetime.now()) + " " + request.META['REMOTE_ADDR'] + "; " + request.META['COMPUTERNAME']  + "; " + request.META['USERNAME']   + "; " + request.META['TMP'] + "; " + "\\off" + "\r\n")
+    f.write(str(datetime.now()) + " " + request.META['REMOTE_ADDR'] + "; " + request.META['USERNAME'] + "; " + "\\on" + "\r\n")
     f.close()
 
     return HttpResponse(html1+html2+html3)
@@ -35,7 +35,7 @@ def off(request):
     html2 = "<b>" + str(mygpio.getTemp()) + "</b>"
 
     f = open(iplog_fpath + "ip.log", 'a')
-    f.write(str(datetime.now()) + " " + request.META['REMOTE_ADDR'] + "; " + request.META['COMPUTERNAME']  + "; " + request.META['USERNAME']   + "; " + request.META['TMP'] + "; " + "\\off" + "\r\n")
+    f.write(str(datetime.now()) + " " + request.META['REMOTE_ADDR'] + "; " + request.META['USERNAME'] + "; " + "\\off" + "\r\n")
     f.close()
 
     return HttpResponse(html1+html2+html3)
