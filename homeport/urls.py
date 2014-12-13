@@ -12,4 +12,6 @@ urlpatterns = patterns('',
     url(r'^off', 'homeport.views.off', name='off'),
     url(r'^log', 'homeport.views.log', name='log'),
     url(r'^gettemp', 'homeport.views.gettemp', name='gettemp'),
+    url(r'^setledon', 'homeport.views.setledon', name='setledon'),
+    url(r'^setledof', 'homeport.views.setledof', name='setledof'),
 )

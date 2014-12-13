@@ -55,6 +55,13 @@ def log(request):
 
     return HttpResponse(html1+html2+html3)
 
+def setledon(request):
+    mygpio.setLed(1)
+    return HttpResponse('Led turn on.')
+
+def setledoff(request):
+    mygpio.setLed(0)
+    return HttpResponse('Led turn off.')
 
 def gettemp(request):
     return HttpResponse(str(mygpio.getTemp()))
