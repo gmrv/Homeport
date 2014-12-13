@@ -13,7 +13,7 @@ port3 = 0
 def home(request):
     html2 = "<b>" + str(mygpio.getTemp()) + "</b>"
 
-    f = open("ip.log", 'a')
+    f = open("/home/pi/homeport/ip.log", 'a')
     f.write(str(datetime.now()) + " " + str(request.META['REMOTE_ADDR']) + "\\" + "\r\n")
     f.close()
 
@@ -23,7 +23,7 @@ def on(request):
     mygpio.setLed(1)
     html2 = "<b>" + str(mygpio.getTemp()) + "</b>"
 
-    f = open("ip.log", 'a')
+    f = open("/home/pi/homeport/ip.log", 'a')
     f.write(str(datetime.now()) + " " + str(request.META['REMOTE_ADDR']) + "\\on" + "\r\n")
     f.close()
 
@@ -33,7 +33,7 @@ def off(request):
     mygpio.setLed(0)
     html2 = "<b>" + str(mygpio.getTemp()) + "</b>"
 
-    f = open("ip.log", 'a')
+    f = open("/home/pi/homeport/ip.log", 'a')
     f.write(str(datetime.now()) + " " + str(request.META['REMOTE_ADDR']) + "\\off" + "\r\n")
     f.close()
 
