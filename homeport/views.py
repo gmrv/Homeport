@@ -20,6 +20,7 @@ def home(request):
 
     return HttpResponse(html1+html2+html3)
 
+
 def on(request):
     mygpio.setLed(1)
     html2 = "<b>" + str(mygpio.getTemp()) + "</b>"
@@ -30,6 +31,7 @@ def on(request):
 
     return HttpResponse(html1+html2+html3)
 
+
 def off(request):
     mygpio.setLed(0)
     html2 = "<b>" + str(mygpio.getTemp()) + "</b>"
@@ -39,6 +41,7 @@ def off(request):
     f.close()
 
     return HttpResponse(html1+html2+html3)
+
 
 def log(request):
     html2 = ""
@@ -51,3 +54,7 @@ def log(request):
     f.close()
 
     return HttpResponse(html1+html2+html3)
+
+
+def gettemp(request):
+    return HttpResponse(str(mygpio.getTemp()))
